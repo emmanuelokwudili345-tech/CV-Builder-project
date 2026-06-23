@@ -1,0 +1,81 @@
+/* =============================================
+   PRINT STYLESHEET — cv-craft
+   Only the CV paper prints, nothing else.
+   ============================================= */
+
+@media print {
+
+  /* Hide everything except the CV */
+  .site-header,
+  .form-panel,
+  .preview-panel > .preview-label,
+  .template-switcher--mobile,
+  .mobile-toggle {
+    display: none !important;
+  }
+
+  /* Reset page */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    height: auto !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .app-layout {
+    display: block;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .preview-panel {
+    padding: 0;
+    background: white;
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    min-height: unset !important;
+  }
+
+  .cv-paper {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 15mm 20mm;
+    font-size: 11pt;
+    margin: 0 auto;
+  }
+
+  /* Fix description overflow */
+  .cv-entry-desc {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  /* Prevent entries splitting across pages */
+  .cv-entry { page-break-inside: avoid; }
+  .cv-section { page-break-inside: avoid; }
+
+  /* Force template colors to print */
+  .template-modern .cv-header {
+    background: #1a1a2e !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-skill-tag {
+    border: 1px solid #e2e1de !important;
+    background: #f4f3f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+}

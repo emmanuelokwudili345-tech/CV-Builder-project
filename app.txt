@@ -1,0 +1,105 @@
+// =============================================
+//  CV CRAFT — app.js
+//  JS ROADMAP — fill in as you learn
+// =============================================
+
+
+// ---- MOBILE TOGGLE (Edit / Preview) ----
+// WHAT TO LEARN: getElementById, classList, addEventListener
+//
+// Steps:
+// 1. Select #showFormBtn, #showPreviewBtn, #formPanel, #previewPanel
+// 2. On #showFormBtn click:
+//    a. Add 'active' to showFormBtn, remove from showPreviewBtn
+//    b. Remove 'hidden' from formPanel
+//    c. Add 'hidden' to previewPanel
+// 3. On #showPreviewBtn click:
+//    a. Add 'active' to showPreviewBtn, remove from showFormBtn
+//    b. Remove 'hidden' from previewPanel
+//    c. Add 'hidden' to formPanel
+// NOTE: On tablet+ the CSS ignores the 'hidden' class so both panels always show
+
+
+// ---- JS HOOK #3: TAB SWITCHING ----
+// WHAT TO LEARN: querySelectorAll, forEach, classList, dataset
+//
+// Steps:
+// 1. Select all .tab-btn and all .tab-content
+// 2. On each button click:
+//    a. Remove 'active' from all buttons and all sections
+//    b. Add 'active' to clicked button
+//    c. Add 'active' to the section with id = 'tab-' + button.dataset.tab
+
+
+// ---- JS HOOK #1: TEMPLATE SWITCHER ----
+// WHAT TO LEARN: dataset, classList
+// Note: There are TWO sets of template buttons (desktop header + mobile preview)
+// Both need to work and stay in sync.
+//
+// Steps:
+// 1. Select ALL .template-btn elements (both sets)
+// 2. Select #cvPreview
+// 3. On each button click:
+//    a. Remove 'active' from ALL template buttons
+//    b. Add 'active' to the clicked button AND the matching button in the other set
+//    c. Remove all template-* classes from #cvPreview
+//    d. Add 'template-' + button.dataset.template to #cvPreview
+
+
+// ---- JS HOOK #4: LIVE PREVIEW — PERSONAL INFO ----
+// WHAT TO LEARN: addEventListener('input'), getElementById, textContent
+//
+// Steps:
+// 1. For each input (fullName, jobTitle, email, phone, location, summary):
+//    Add an 'input' event listener that updates the matching CV element:
+//    - fullName.value   → document.getElementById('cvName').textContent
+//    - jobTitle.value   → document.getElementById('cvJobTitle').textContent
+//    - summary.value    → document.getElementById('cvSummary').textContent
+//    - email/phone/location → rebuild the cvContacts innerHTML with 3 spans
+
+
+// ---- JS HOOK #5: PHOTO UPLOAD ----
+// WHAT TO LEARN: FileReader, change event
+//
+// Steps:
+// 1. photoUploadArea click → trigger photoUpload.click()
+// 2. photoUpload change → read file with FileReader
+// 3. On reader.onload → set cvPhoto innerHTML to <img src="[result]">
+// 4. reader.readAsDataURL(file)
+
+
+// ---- JS HOOK #6-8: ADD / REMOVE EXPERIENCE ----
+// WHAT TO LEARN: createElement, innerHTML, appendChild, event delegation, closest
+//
+// ADD: On #addExperience click, append a new .entry-card to #experienceList
+// REMOVE: Listen for clicks on #experienceList, if .btn-remove clicked,
+//         call event.target.closest('.entry-card').remove()
+
+
+// ---- JS HOOK #9: ADD / REMOVE EDUCATION ----
+// Same pattern as experience but for #educationList and #addEducation
+
+
+// ---- JS HOOK #10-11: SKILLS TAGS ----
+// WHAT TO LEARN: keydown (Enter), createElement, event delegation
+//
+// ADD: On #addSkillBtn click or Enter key in #skillInput:
+//      Create a <span class="skill-tag"> with name + remove button
+//      Append to #skillsTags, clear input
+// REMOVE: Event delegation on #skillsTags for .tag-remove clicks
+
+
+// ---- JS HOOK #2: DOWNLOAD / PRINT ----
+// WHAT TO LEARN: window.print()
+//
+// Just one line inside the click handler:
+// document.getElementById('downloadBtn').addEventListener('click', function() {
+//   window.print();
+// });
+
+
+// ---- BONUS: SAVE TO LOCALSTORAGE ----
+// WHAT TO LEARN: localStorage, JSON.stringify, JSON.parse
+//
+// After any input change, save all values to localStorage
+// On page load, read from localStorage and refill the form + preview
