@@ -67,7 +67,7 @@ clarix-cv-builder/
 ## Author
 
 **Emmanuel Okwudili**
-- GitHub: [@emmanuelokwudili345-tech](https://github.com/yourusername)
+- GitHub: [@emmanuelokwudili345-tech](https://github.com/emmanuelokwudili345-tech)
 - Live Project: [clarix-project.netlify.app](https://clarix-project.netlify.app)
 
 ---
